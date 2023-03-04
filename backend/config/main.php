@@ -15,9 +15,9 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-            // 'class' => 'common\components\Request',
-            // 'web' => '/backend/web',
-            // 'adminUrl' => '/backend'
+            'class' => 'common\components\Request',
+            'web' => '/backend/web',
+            'adminUrl' => '/backend'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -47,6 +47,16 @@ return [
             'rules' => [],
         ],
 
+    ],
+    'as access' => [
+        // 'class' => '\hscstudio\mimin\components\AccessControl',
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'gii/*',
+            'site/*',
+            'debug/*',
+            // 'mimin/*', // only in dev mode
+        ],
     ],
     'params' => $params,
 ];
