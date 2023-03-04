@@ -1,4 +1,7 @@
 <?php
+
+use mdm\admin\components\AccessControl;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -51,11 +54,12 @@ return [
     'as access' => [
         // 'class' => '\hscstudio\mimin\components\AccessControl',
         'class' => 'mdm\admin\components\AccessControl',
+        // 'class' => AccessControl::class,
         'allowActions' => [
             'gii/*',
             'site/*',
             'debug/*',
-            // 'mimin/*', // only in dev mode
+            // only in dev mode
         ],
     ],
     'params' => $params,
