@@ -5,6 +5,7 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -20,14 +21,14 @@ return [
     ],
 
     'modules' => [
-        'gii' => [
-            'class' => 'yii\gii\Module',
-            'generators' => [
-                'crud'   => [
-                    'class' => 'common\generators\Generator',
-                ]
-            ]
-        ],
+        // 'gii' => [
+        //     'class' => 'yii\gii\Module',
+        //     'generators' => [
+        //         'crud'   => [
+        //             'class' => 'common\generators\Generator',
+        //         ]
+        //     ]
+        // ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
         ],

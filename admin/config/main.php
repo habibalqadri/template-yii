@@ -7,23 +7,26 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-frontend',
+    'id' => 'app-admin',
     'basePath' => dirname(__DIR__),
+    'controllerNamespace' => 'admin\controllers',
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'frontend\controllers',
-
+    'modules' => [],
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-frontend',
+            'csrfParam' => '_csrf-admin',
+            'class' => 'common\components\Request',
+            'web' => '/admin/web',
+            'adminUrl' => '/admin'
         ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+            'identityCookie' => ['name' => '_identity-admin', 'httpOnly' => true],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the frontend
-            'name' => 'advanced-frontend',
+            // this is the name of the session cookie used for login on the admin
+            'name' => 'advanced-admin',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -37,14 +40,23 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'rules' => [
-            ],
+            'rules' => [],
         ],
-        */
+
+    ],
+    'as access' => [
+        // 'class' => '\hscstudio\mimin\components\AccessControl',
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            'gii/*',
+            'site/*',
+            'debug/*',
+            // 'mimin/*', // only in dev mode
+        ],
     ],
     'params' => $params,
 ];
