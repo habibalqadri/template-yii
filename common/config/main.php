@@ -19,6 +19,20 @@ return [
         // ]
     ],
 
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'generators' => [
+                'crud'   => [
+                    'class' => 'common\generators\Generator',
+                ]
+            ]
+        ],
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ],
+    ],
+
 
 
 ];
