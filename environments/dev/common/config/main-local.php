@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
-            'username' => 'root',
-            'password' => '',
+            'dsn' => 'pgsql:host=127.0.0.1;port=5432;dbname=cuba', // PostgreSQL
+            'username' => 'admin',  // postgre
+            'password' => 'Admin123',   // postgre
             'charset' => 'utf8',
         ],
         'mailer' => [

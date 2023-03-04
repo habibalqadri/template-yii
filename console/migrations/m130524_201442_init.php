@@ -24,6 +24,17 @@ class m130524_201442_init extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->insert('user', [
+            'username' => 'admin',
+            'auth_key' => 'GxetsgBGjTonwmlQIaeezu_nlomsZTa7',
+            'password_hash' => '$2y$13$MJI5PQjI3/LUEKWWj3a0KeZZ.zj0/sjTqGgTSmaMdaX28NlSILMWK',
+            'password_reset_token' => '123123123',
+            'email' => 'dfdsa@dfa.com',
+            'status' => '10',
+            'created_at' => time(),
+            'updated_at' => time()
+        ]);
     }
 
     public function down()
