@@ -12,23 +12,13 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
         ],
-        'user' => [
-            'class' => 'mdm\admin\models\User',
-            'identityClass' => 'mdm\admin\models\User',
-            'loginUrl' => ['admin/user/login'],
-        ]
+        // 'user' => [
+        //     // 'class' => 'mdm\admin\models\User',
+        //     // 'identityClass' => 'mdm\admin\models\User',
+        //     'loginUrl' => ['admin/user/login'],
+        // ]
     ],
-    'modules' => [
-        'admin' => [
-            'class' => 'mdm\admin\Module',
-        ]
-    ],
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            'site/*',
-            'admin/*',
-        ]
-    ],
+
+
 
 ];
